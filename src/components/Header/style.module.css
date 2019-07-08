@@ -1,0 +1,19 @@
+.headerWrapper {
+    height: 50px;
+}
+
+.headerWrapper> div {
+    height: inherit;
+}
+
+.logoWrapper {
+    text-align: left;
+}
+
+.logoImage {
+    width: 110px;
+}
+
+.iconImage {
+    width: 20px;
+}
