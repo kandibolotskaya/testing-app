@@ -1,0 +1,11 @@
+.mainAppWrapper {
+    display: flex;
+}
+
+.mainAppWrapper>section:first-child {
+    width: 350px;
+}
+
+.mainAppWrapper>section:nth-child(2) {
+    width: calc(100% - 350px);
+}
