@@ -2,6 +2,13 @@
     width: 100%;
     margin: 10px 0;
     cursor: pointer;
+    border-left: 4px solid transparent;
+    border-radius: 0;
+    color: grey;
+}
+
+.activeTab {
+    border-left: 4px solid #e73d7d;
 }
 
 .menuName {

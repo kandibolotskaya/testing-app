@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-// import logo from '/assets/images/logo.png';
 import css from './style.module.css';
 
 const Header: React.FC = () => {

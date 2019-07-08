@@ -8,7 +8,7 @@ import { links } from '../../constants';
 const MainContent: React.FC = (prop) => {
     return (
     <Switch>
-        <Route path="/dashboard" render={() => <div>Dashboard</div>}/>
+        <Route path="/dashboard" component={Dashboard}/>
         <Route path="/links" render={() => <div>Links</div>}/>
         <Route path="/pages" render={() => <div>pages</div>}/>
         <Route path="/embeds" render={() => <div>embeds</div>}/>

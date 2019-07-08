@@ -1,0 +1,155 @@
+.dashboardWrapper {
+    text-transform: uppercase;
+}
+
+h1 {
+    width: 300px;
+}
+
+.dashboardWrapper>div:nth-child(2) {
+    margin-top: 100px;
+}
+
+.searchSectionWrapper,
+.audienceSection {
+    display: flex;
+}
+
+.searchSectionWrapper>div:first-child {
+    width: 70%;
+    max-width: 750px;
+    margin-right: 60px;
+}
+
+.cardWrapper {
+    width: 100%;
+    margin: 10px 0 5px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    color: grey;
+}
+
+.cardWrapper:hover {
+    border-left: 4px solid #e03778;
+}
+
+.cardField {
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+.searchInputField,
+.searchInputField:focus {
+    border: none;
+    border-color: transparent;
+}
+
+.searchInputField::placeholder {
+    color: grey;
+}
+
+.destinationUrl {
+    display: flex;
+    position: relative;
+    padding: 15px;
+}
+
+.destinationUrl>i {
+    padding-top: 5px;
+    margin-left: 30px;
+}
+
+.shortenBtn {
+    position: absolute;
+    top: -7%;
+    left: 98%;
+}
+
+.fieldsLabel {
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.searchButtonWrapper,
+.audienceColumnInfoImg {
+    display: flex;
+}
+
+.searchBtn {
+    padding: 2px;
+    min-width: 60px;
+    position: relative;
+}
+
+.searchBtnIcon {
+    position: absolute;
+    bottom: -5px;
+    right: -2px;
+}
+
+.searchBtn>button {
+    padding: 0 10px!important;
+    margin: 0 5px;
+}
+
+.audienceInfo {
+    text-transform: none; 
+}
+
+.audienceSection>div:first-child {
+    width: 300px;
+}
+
+.audienceSection>div:nth-child(2) {
+    width: calc(100% - 300px);
+    margin-top: 30px;
+}
+
+.audienceSection>div>h6 {
+    font-weight: 700;
+}
+
+.audienceSection>div>p {
+    margin: 5px 0;
+}
+
+.audienceSection>div>h1 {
+    margin-bottom: 40px;
+}
+
+.launch_arrow {
+    margin-left: 10px;
+    width: 11px;
+}
+
+.audienceColumnInfoText {
+    text-transform: capitalize;
+    font-size: 13px;
+    width: 60px;
+    margin: 0 0 5px 5px;
+}
+
+.audienceColumnInfoImg {
+    margin-left: 5px; 
+}
+
+.audienceColumnInfoImg>h4 {
+    font-weight: 500; 
+}
+
+.audienceColumnInfoImg>img {
+    margin: 0 0 10px 5px;
+}
+
+.audiencePopoverMenu {
+    padding: 0;
+}
+
+.audiencePopoverWrapper {
+    width: 100px;
+}
+
+.audienceSectionWrapper {
+    width: 410px;
+}
