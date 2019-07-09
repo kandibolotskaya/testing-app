@@ -20,19 +20,19 @@ class Auth {
         this.auth0.authorize();
     }
 
-    handleAuthentication(){console.log('****************')
-        this.auth0.parseHash((err, authResults) => {console.log('33333333')
+    handleAuthentication(){
+        this.auth0.parseHash((err, authResults) => {
             if(
                 authResults &&
                 authResults.accessToken &&
                 authResults.idToken &&
                 authResults.expiresIn
-            ) {console.log('4444444444444')
+            ) {
                 let expiresAt =
                     JSON.stringify((authResults.expiresIn) * 1000 + new Date().getTime());
                 localStorage.setItem('access_token', authResults.accessToken);
                 localStorage.setItem('id_token', authResults.idToken);
-                localStorage.setItem('expires_at', expiresAt);console.log('*-*-*-*-*-*-*-*-*-*-*-*')
+                localStorage.setItem('expires_at', expiresAt);
                 window.location.replace('/dashboard');
             } else if(!!err){
                 console.log(err);
