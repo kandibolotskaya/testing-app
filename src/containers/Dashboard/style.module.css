@@ -173,18 +173,37 @@ h1 {
         margin: 0;
         padding: 0;
     }
+
+    .backgroundImg {
+        top: 190px;
+    }
 }
 
 @media (max-width: 960px) {
     .backgroundImg {
         width: 100vw;
-        top: 190px;
         right: -40px;
     }
 }
 
 @media (max-width: 490px) {
+    .audienceSectionWrapper {
+        width: 100%;
+    }
+
     .audienceSectionWrapper>div {
         display: block;
+    }
+
+    .audienceSection>div:first-child {
+        width: 100%;
+    }
+
+    h1 {
+        width: 100%;
+    }
+
+    .backgroundImg {
+        top: 490px;
     }
 }
