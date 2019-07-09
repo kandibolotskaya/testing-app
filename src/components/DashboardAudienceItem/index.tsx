@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    MDBPopover,
     MDBPopoverBody,
     MDBListGroup,
-    MDBListGroupItem
+    MDBListGroupItem,
+    MDBPopper
   } from 'mdbreact';
 import css from './style.module.css';
 
@@ -15,63 +15,51 @@ interface IProps {
     percent: string
 }
 
-// interface CustomProps {
-//     handleClick: (event: React.FormEvent<HTMLInputElement>) => void;
-// }
-
 interface IState {
-    isPopoverVisible: boolean
+    isVisible: boolean,
+    selectedItem: string
 }
 
 const audienceLinks = ['launch', 'edit', 'share'];
 
-// type Props = IProps & CustomProps;
 
 class DashboardAudienceItem extends React.Component<IProps, IState> {
 
     state: IState={
-        isPopoverVisible: false,
+        isVisible: false,
+        selectedItem: ''
     }
 
-    handleSelectMenuItem = (e: any) => {
-        const value = e.currentTarget;
-        // this.setState({isPopoverVisible: false});
-        {console.log('********', this.state.isPopoverVisible)}
-    }
 
-    setVisibility = () => {
-        {console.log('-----------', this.state.isPopoverVisible)}
-        
-    }
-
-    handleCl=(e: any)=> {
-        const val = e.currentTarget;
-        console.log(val)
-        this.setState({isPopoverVisible: false});
+    handleChooseItem=(e: any)=> {
+        const value = e.currentTarget.getAttribute('value');
+        this.setState({
+            isVisible: true,
+            selectedItem: value
+        });
     }
 
 
   render(){
     return (
       <React.Fragment>
-            <MDBPopover
+            <MDBPopper
                 placement="bottom"
                 popover
                 clickable
                 domElement
                 id={this.props.popoverId}
-                isVisible={this.state.isPopoverVisible}
-                onChange={this.setVisibility}
+                isVisible={this.state.isVisible}
             >
             <img alt="plus" src={this.props.plusIconSrc} />
             <div>
-                <MDBPopoverBody className={css.audiencePopoverMenu} onClick={this.handleSelectMenuItem}>
+                <MDBPopoverBody className={css.audiencePopoverMenu}>
                     <MDBListGroup className={css.listGroup}>
-                        {audienceLinks.map(item => <MDBListGroupItem key={item} onClick={this.handleCl} value={`${item}`} href="#">{item}</MDBListGroupItem>)}
+                        {audienceLinks.map(item => <MDBListGroupItem key={item} onClick={this.handleChooseItem} value={`${item}`} href="#">{item}</MDBListGroupItem>)}
                     </MDBListGroup>
                 </MDBPopoverBody>
             </div>
-            </MDBPopover>
+            </MDBPopper>
             <p className={css.audienceColumnInfoText}>{this.props.text}</p>
             <div className={css.audienceColumnInfoImg}>
                 <h4>{this.props.percent}%</h4>

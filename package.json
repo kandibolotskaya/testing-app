@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/auth0-js": "^9.10.2",
+    "@types/auth0-lock": "^11.4.12",
     "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.15",
     "@types/lodash": "^4.14.136",
@@ -10,6 +12,8 @@
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.4",
+    "auth0-js": "^9.11.1",
+    "auth0-lock": "^11.16.3",
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "mdbreact": "^4.18.0",

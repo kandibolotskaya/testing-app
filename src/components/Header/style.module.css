@@ -12,7 +12,6 @@
 }
 
 .logoWrapper {
-    /* text-align: left; */
     display: flex;
     width: 80%;
     justify-content: space-between;

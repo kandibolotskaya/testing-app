@@ -44,7 +44,9 @@ h1 {
 .searchInputField,
 .searchInputField:focus {
     border: none;
+    outline: none;
     border-color: transparent;
+    width: 100%;
 }
 
 .searchInputField::placeholder {
@@ -88,6 +90,7 @@ h1 {
     position: absolute;
     bottom: -5px;
     right: -2px;
+    background: #fff;
 }
 
 .searchBtn>button {
@@ -129,6 +132,59 @@ h1 {
     width: 410px;
 }
 
-@media (min-width: 960px) {
-    
+.audienceSection {
+    position: relative;
+}
+
+.backgroundImg {
+    background-image: url(/assets/images/backgroundImg.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: calc(100vw - 370px);
+    position: absolute;
+    top: 10px;
+    right: -120px;
+    z-index: -1111;
+}
+
+@media (max-width: 1190px) {
+    .searchSectionWrapper,
+    .audienceSection {
+        display: block;
+    }
+
+    .searchSectionWrapper>div:first-child {
+        width: 100%;
+        max-width: 750px;
+        margin-right: 0;
+    }
+
+    .searchSectionWrapper>div:nth-child(2) {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .audienceSection>div:nth-child(2) {
+        width: 100%;
+    }
+
+    .audienceSectionWrapper {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .backgroundImg {
+        width: 100vw;
+        top: 190px;
+        right: -40px;
+    }
+}
+
+@media (max-width: 490px) {
+    .audienceSectionWrapper>div {
+        display: block;
+    }
 }

@@ -7,16 +7,24 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  // MDBPopover,
-  // MDBPopoverBody,
-  // MDBListGroup,
-  // MDBListGroupItem
 } from 'mdbreact';
 import classNames from 'classnames';
+import { RouteComponentProps } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { Page, DashboardAudienceItem } from '../../components';
 import css from './style.module.css';
+import auth from '../../utils/Auth';
 
-class Dashboard extends React.Component {
+
+interface Props extends RouteComponentProps<any> {}
+
+class Dashboard extends React.Component<Props> {
+  componentDidMount(){
+    if(!auth.isAuthenticated()){
+      auth.login();
+    }
+  }
+  
   render(){
     return (
       <Page>
@@ -38,11 +46,42 @@ class Dashboard extends React.Component {
                             placeholder='enter your long url here'
                             className={classNames({
                               [css.searchInputField]: true,
-                              ['form-control']: true,
                             })}
                           />
                         </MDBCardBody>
                     </MDBCard>
+                    <div className={css.searchButtonWrapper}>
+                      <div className={css.searchBtn}>
+                        <MDBBtn
+                          outline
+                          color="light-blue"
+                        >
+                          short links
+                        </MDBBtn>
+                        <MDBIcon
+                            icon="check-circle"
+                            className={classNames({
+                              [css.searchBtnIcon]: true,
+                              ['pink-text']: true,
+                            })}
+                        />
+                      </div>
+                      <div className={css.searchBtn}>
+                        <MDBBtn
+                          outline
+                          color="light-blue"
+                        >
+                          geo links
+                        </MDBBtn>
+                        <MDBIcon
+                            icon="plus-circle"
+                            className={classNames({
+                              [css.searchBtnIcon]: true,
+                              ['black-text']: true,
+                            })}
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div>
                     <p className={css.fieldsLabel}>domains</p>
@@ -59,35 +98,6 @@ class Dashboard extends React.Component {
                     </MDBCard>
                   </div>
               </section>
-              <div className={css.searchButtonWrapper}>
-                <div className={css.searchBtn}>
-                  <MDBBtn
-                    outline
-                    color="light-blue"
-                  >
-                    short links
-                  </MDBBtn>
-                  <MDBIcon
-                      icon="check-circle"
-                      className={classNames({
-                        [css.searchBtnIcon]: true,
-                        ['pink-text']: true,
-                      })}
-                  />
-                </div>
-                <div className={css.searchBtn}>
-                  <MDBBtn outline color="light-blue">
-                    geo links
-                  </MDBBtn>
-                  <MDBIcon
-                      icon="plus-circle"
-                      className={classNames({
-                        [css.searchBtnIcon]: true,
-                        ['black-text']: true,
-                      })}
-                  />
-                </div>
-              </div>
             </div>
             <div className={css.audienceSection}>
               <div>
@@ -103,29 +113,6 @@ class Dashboard extends React.Component {
                 <MDBContainer className={css.audienceSectionWrapper}>
                   <MDBRow center>
                     <MDBCol>
-                      {/* <MDBPopover
-                        placement="bottom"
-                        popover
-                        clickable
-                        domElement
-                        id="popper1"
-                      >
-                        <img alt="plus" src='/assets/images/cyan-plus.svg' />
-                        <div>
-                          <MDBPopoverBody className={css.audiencePopoverMenu}>
-                              <MDBListGroup>
-                                <MDBListGroupItem href="#">launch</MDBListGroupItem>
-                                <MDBListGroupItem href="#">edit</MDBListGroupItem>
-                                <MDBListGroupItem href="#">share</MDBListGroupItem>
-                              </MDBListGroup>
-                          </MDBPopoverBody>
-                        </div>
-                      </MDBPopover>
-                      <p className={css.audienceColumnInfoText}>spotify listeners</p>
-                      <div className={css.audienceColumnInfoImg}>
-                        <h4>357%</h4>
-                        <img alt='arrow_up' src='/assets/images/green_arrow.svg' />
-                      </div> */}
                       <DashboardAudienceItem
                         popoverId='popper1'
                         plusIconSrc='/assets/images/cyan-plus.svg'
@@ -134,29 +121,6 @@ class Dashboard extends React.Component {
                       />
                     </MDBCol>
                     <MDBCol>
-                      {/* <MDBPopover
-                        placement="bottom"
-                        popover
-                        clickable
-                        domElement
-                        id="popper2"
-                      >
-                        <img alt="plus" src='/assets/images/blue-plus.svg' />
-                        <div>
-                          <MDBPopoverBody className={css.audiencePopoverMenu}>
-                              <MDBListGroup>
-                                <MDBListGroupItem href="#">launch</MDBListGroupItem>
-                                <MDBListGroupItem href="#">edit</MDBListGroupItem>
-                                <MDBListGroupItem href="#">share</MDBListGroupItem>
-                              </MDBListGroup>
-                          </MDBPopoverBody>
-                        </div>
-                      </MDBPopover>
-                      <p className={css.audienceColumnInfoText}>ticket buyers</p>
-                      <div className={css.audienceColumnInfoImg}>
-                        <h4>315%</h4>
-                        <img alt='arrow_up' src='/assets/images/green_arrow.svg' />
-                      </div> */}
                       <DashboardAudienceItem
                         popoverId='popper2'
                         plusIconSrc='/assets/images/blue-plus.svg'
@@ -165,29 +129,6 @@ class Dashboard extends React.Component {
                       />
                     </MDBCol>
                     <MDBCol>
-                      {/* <MDBPopover
-                        placement="bottom"
-                        popover
-                        clickable
-                        domElement
-                        id="popper3"
-                      >
-                        <img alt="plus" src='/assets/images/purple-plus.svg' />
-                        <div>
-                          <MDBPopoverBody className={css.audiencePopoverMenu}>
-                              <MDBListGroup>
-                                <MDBListGroupItem href="#" hover>launch</MDBListGroupItem>
-                                <MDBListGroupItem href="#" hover>edit</MDBListGroupItem>
-                                <MDBListGroupItem href="#" hover>share</MDBListGroupItem>
-                              </MDBListGroup>
-                          </MDBPopoverBody>
-                        </div>
-                      </MDBPopover>
-                      <p className={css.audienceColumnInfoText}>music purchasers</p>
-                      <div className={css.audienceColumnInfoImg}>
-                        <h4>432%</h4>
-                        <img alt='arrow_up' src='/assets/images/green_arrow.svg' />
-                      </div> */}
                       <DashboardAudienceItem
                         popoverId='popper3'
                         plusIconSrc='/assets/images/purple-plus.svg'
@@ -198,6 +139,7 @@ class Dashboard extends React.Component {
                   </MDBRow>
                 </MDBContainer>
               </div>
+              <div className={css.backgroundImg} />
             </div>
           </div>
       </Page>
@@ -205,4 +147,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

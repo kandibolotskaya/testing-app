@@ -1,3 +1,9 @@
 .pageWrapper {
     padding: 0 120px;
 }
+
+@media (max-width: 960px) {
+    .pageWrapper {
+        padding: 0 40px;
+    }
+}
