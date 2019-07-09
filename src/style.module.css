@@ -1,3 +1,7 @@
+.application {
+    position: relative;
+}
+
 .mainAppWrapper {
     display: flex;
 }
@@ -9,3 +13,16 @@
 .mainAppWrapper>section:nth-child(2) {
     width: calc(100% - 350px);
 }
+
+.backgroundImg {
+    background-image: url(/assets/images/backgroundImg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: calc(100% - 350px);
+    position: absolute;
+    top: 380px;
+    right: 0;
+    z-index: -1111;
+}
+

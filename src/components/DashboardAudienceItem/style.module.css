@@ -1,0 +1,37 @@
+@value colors: "../../global-style/color.module.css";
+@value (activeBlueColor, textDarkColor) from colors;
+
+.audiencePopoverMenu {
+    padding: 0;
+    width: 200px;
+}
+
+.audienceColumnInfoText {
+    text-transform: capitalize;
+    font-size: 13px;
+    width: 60px;
+    margin: 0 0 5px 5px;
+}
+
+.audienceColumnInfoImg {
+    margin-left: 5px;
+    display: flex;
+}
+
+.audienceColumnInfoImg>h4 {
+    font-weight: 500;
+    color: textDarkColor;
+}
+
+.audienceColumnInfoImg>img {
+    margin: 0 0 10px 5px;
+}
+
+.listGroup>a {
+    color: textDarkColor;
+}
+
+.listGroup>a:hover {
+    background: activeBlueColor;
+    color: #fff;
+}

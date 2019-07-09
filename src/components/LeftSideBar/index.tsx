@@ -12,7 +12,6 @@ const LeftSideBar: React.FC<Props> = (props) => {
 
   return (
     <div>
-      {console.log(props)}
         {Object.keys(links).map(item => (
             <NavLink key={item} to={`/${item}`}>
               <MDBCard
@@ -29,6 +28,13 @@ const LeftSideBar: React.FC<Props> = (props) => {
               </MDBCard>
             </NavLink>
         ))}
+        <div className={css.changeBackgroundBtnWrapper}>
+          <p>change background</p>
+          <div>
+            <img alt="change_background" src="/assets/images/Group564.svg" />
+            <img alt="change_background" src="/assets/images/Group563.svg" />
+          </div>
+        </div>
     </div>
   );
 }

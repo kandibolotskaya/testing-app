@@ -7,13 +7,13 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBPopover,
-  MDBPopoverBody,
-  MDBListGroup,
-  MDBListGroupItem
+  // MDBPopover,
+  // MDBPopoverBody,
+  // MDBListGroup,
+  // MDBListGroupItem
 } from 'mdbreact';
 import classNames from 'classnames';
-import { Page } from '../../components';
+import { Page, DashboardAudienceItem } from '../../components';
 import css from './style.module.css';
 
 class Dashboard extends React.Component {
@@ -103,7 +103,7 @@ class Dashboard extends React.Component {
                 <MDBContainer className={css.audienceSectionWrapper}>
                   <MDBRow center>
                     <MDBCol>
-                      <MDBPopover
+                      {/* <MDBPopover
                         placement="bottom"
                         popover
                         clickable
@@ -125,10 +125,16 @@ class Dashboard extends React.Component {
                       <div className={css.audienceColumnInfoImg}>
                         <h4>357%</h4>
                         <img alt='arrow_up' src='/assets/images/green_arrow.svg' />
-                      </div>
+                      </div> */}
+                      <DashboardAudienceItem
+                        popoverId='popper1'
+                        plusIconSrc='/assets/images/cyan-plus.svg'
+                        text='spotify listeners'
+                        percent='357'
+                      />
                     </MDBCol>
                     <MDBCol>
-                    <MDBPopover
+                      {/* <MDBPopover
                         placement="bottom"
                         popover
                         clickable
@@ -150,16 +156,21 @@ class Dashboard extends React.Component {
                       <div className={css.audienceColumnInfoImg}>
                         <h4>315%</h4>
                         <img alt='arrow_up' src='/assets/images/green_arrow.svg' />
-                      </div>
+                      </div> */}
+                      <DashboardAudienceItem
+                        popoverId='popper2'
+                        plusIconSrc='/assets/images/blue-plus.svg'
+                        text='ticket buyers'
+                        percent='315'
+                      />
                     </MDBCol>
                     <MDBCol>
-                    <MDBPopover
+                      {/* <MDBPopover
                         placement="bottom"
                         popover
                         clickable
                         domElement
                         id="popper3"
-                        className={css.audiencePopoverWrapper}
                       >
                         <img alt="plus" src='/assets/images/purple-plus.svg' />
                         <div>
@@ -176,7 +187,13 @@ class Dashboard extends React.Component {
                       <div className={css.audienceColumnInfoImg}>
                         <h4>432%</h4>
                         <img alt='arrow_up' src='/assets/images/green_arrow.svg' />
-                      </div>
+                      </div> */}
+                      <DashboardAudienceItem
+                        popoverId='popper3'
+                        plusIconSrc='/assets/images/purple-plus.svg'
+                        text='music purchasers'
+                        percent='432'
+                      />
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>

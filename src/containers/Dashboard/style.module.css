@@ -1,3 +1,6 @@
+@value colors: "../../global-style/color.module.css";
+@value (mainPurpleColor) from colors;
+
 .dashboardWrapper {
     text-transform: uppercase;
 }
@@ -30,7 +33,7 @@ h1 {
 }
 
 .cardWrapper:hover {
-    border-left: 4px solid #e03778;
+    border-left: 4px solid mainPurpleColor;
 }
 
 .cardField {
@@ -71,8 +74,7 @@ h1 {
     margin-left: 10px;
 }
 
-.searchButtonWrapper,
-.audienceColumnInfoImg {
+.searchButtonWrapper {
     display: flex;
 }
 
@@ -123,33 +125,10 @@ h1 {
     width: 11px;
 }
 
-.audienceColumnInfoText {
-    text-transform: capitalize;
-    font-size: 13px;
-    width: 60px;
-    margin: 0 0 5px 5px;
-}
-
-.audienceColumnInfoImg {
-    margin-left: 5px; 
-}
-
-.audienceColumnInfoImg>h4 {
-    font-weight: 500; 
-}
-
-.audienceColumnInfoImg>img {
-    margin: 0 0 10px 5px;
-}
-
-.audiencePopoverMenu {
-    padding: 0;
-}
-
-.audiencePopoverWrapper {
-    width: 100px;
-}
-
 .audienceSectionWrapper {
     width: 410px;
+}
+
+@media (min-width: 960px) {
+    
 }
