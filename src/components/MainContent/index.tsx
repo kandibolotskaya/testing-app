@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router';
-import { Dashboard, NotFound } from '../../containers';
+import { Dashboard, NotFound, Login } from '../../containers';
 import { Callback } from '..';
 import auth from '../../utils/Auth';
 
@@ -14,7 +14,7 @@ const MainContent: React.FC = () => {
                     if(auth.isAuthenticated()) {
                         return <Dashboard />
                     } else {
-                        return <Redirect to="/not_found"/>
+                        return <Redirect to="/login"/>
                     }
                 }
             }/>
@@ -28,6 +28,7 @@ const MainContent: React.FC = () => {
             <Route exact path="/" render={() => (
                 <Redirect to="/links"/>
             )}/>
+            <Route path='/login' component={Login} />
             <Route path='/callback' component={Callback} />
             <Route path='*' component={NotFound} />
         </Switch>

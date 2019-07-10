@@ -13,17 +13,11 @@ import { RouteComponentProps } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { Page, DashboardAudienceItem } from '../../components';
 import css from './style.module.css';
-import auth from '../../utils/Auth';
 
 
 interface Props extends RouteComponentProps<any> {}
 
 class Dashboard extends React.Component<Props> {
-  componentDidMount(){
-    if(!auth.isAuthenticated()){
-      auth.login();
-    }
-  }
   
   render(){
     return (
