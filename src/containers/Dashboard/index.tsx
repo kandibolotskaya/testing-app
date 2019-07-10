@@ -85,7 +85,7 @@ class Dashboard extends React.Component<Props> {
                         <MDBCardBody
                           className={css.destinationUrl}
                         >
-                          <p>found.ee</p>
+                          <p>founc.ee</p>
                           <MDBIcon icon="arrow-down" size="sm"/>
                           <img alt="btn" className={css.shortenBtn} src='/assets/images/button_shorten.svg' />
                         </MDBCardBody>
@@ -106,7 +106,7 @@ class Dashboard extends React.Component<Props> {
               <div>
                 <MDBContainer className={css.audienceSectionWrapper}>
                   <MDBRow center>
-                    <MDBCol>
+                    <MDBCol className={css.audienceColumn}>
                       <DashboardAudienceItem
                         popoverId='popper1'
                         plusIconSrc='/assets/images/cyan-plus.svg'
@@ -114,7 +114,7 @@ class Dashboard extends React.Component<Props> {
                         percent='357'
                       />
                     </MDBCol>
-                    <MDBCol>
+                    <MDBCol className={css.audienceColumn}>
                       <DashboardAudienceItem
                         popoverId='popper2'
                         plusIconSrc='/assets/images/blue-plus.svg'
@@ -122,7 +122,7 @@ class Dashboard extends React.Component<Props> {
                         percent='315'
                       />
                     </MDBCol>
-                    <MDBCol>
+                    <MDBCol className={css.audienceColumn}>
                       <DashboardAudienceItem
                         popoverId='popper3'
                         plusIconSrc='/assets/images/purple-plus.svg'

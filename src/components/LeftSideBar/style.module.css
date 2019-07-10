@@ -3,7 +3,7 @@
 
 .cardWrapper {
     width: 100%;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     cursor: pointer;
     border-left: 4px solid transparent;
     border-radius: 0;
@@ -16,19 +16,25 @@
 
 .menuName {
     text-transform: uppercase;
-    padding: 15px;
+    padding: 23.9px;
+    font-size: 16px;
 }
 
 .changeBackgroundBtnWrapper {
-    margin: 90px 0 0 10px;
+    margin: 124px 0 0 19px;
     text-transform: uppercase;
     font-size: 11px;
 }
 
+.changeBackgroundBtnWrapper>p {
+    letter-spacing: 1px;
+}
+
 .changeBackgroundBtnWrapper>div {
     display: flex;
+    margin-top: 9px;
 }
 
 .changeBackgroundBtnWrapper>div>img:first-of-type {
-    margin-right: 15px;
+    margin-right: 9px;
 }

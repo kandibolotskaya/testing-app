@@ -3,7 +3,7 @@
 
 
 .headerWrapper {
-    height: 100px;
+    height: 115px;
     padding: 0;
 }
 
@@ -13,18 +13,19 @@
 
 .logoWrapper {
     display: flex;
-    width: 80%;
+    width: 93.5%;
     justify-content: space-between;
     align-items: center;
 }
 
 .logoImage {
-    width: 150px;
+    width: 197px;
 }
 
 .iconImage {
-    width: 15px;
+    width: 17px;
     height: 10px;
+    margin-bottom: 46px;
 }
 
 .burgerMenuWrapper {
@@ -73,4 +74,10 @@
 
 .changeBackgroundBtnWrapper>div>img:first-of-type {
     margin-right: 15px;
+}
+
+@media (max-width: 960px) {
+    .logoWrapper {
+        width: 80%;
+    }
 }

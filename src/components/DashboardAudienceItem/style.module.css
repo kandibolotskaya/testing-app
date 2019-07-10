@@ -8,13 +8,14 @@
 
 .audienceColumnInfoText {
     text-transform: capitalize;
-    font-size: 13px;
+    font-size: 14px;
     width: 60px;
     margin: 0 0 5px 5px;
+    line-height: 1.6;
 }
 
 .audienceColumnInfoImg {
-    margin-left: 5px;
+    margin-top: 11px;
     display: flex;
 }
 
